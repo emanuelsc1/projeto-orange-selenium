@@ -1,5 +1,6 @@
 Feature: Buscar System Users
 
+  @login
   Scenario: Realizar consulta por Username
     Given o usuário acessa o menu Admin
     When usuário realiza uma consulta por Username

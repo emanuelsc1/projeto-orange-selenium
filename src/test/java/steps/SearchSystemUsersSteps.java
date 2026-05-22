@@ -15,20 +15,14 @@ public class SearchSystemUsersSteps {
 
     private WebDriver driver;
     private final SearchSystemUsersPage searchSystemUsersPage;
-    private LoginPage loginPage;
 
     public SearchSystemUsersSteps() {
         this.driver = Hooks.getDriver();
         this.searchSystemUsersPage = new SearchSystemUsersPage(driver);
-        this.loginPage = new LoginPage(driver);
     }
 
     @Given("o usuário acessa o menu Admin")
     public void oUsuárioAcessaOMenuAdmin() {
-        loginPage.acessarAplicacao();
-        loginPage.preencherUsuario(ConfigProperties.USER);
-        loginPage.preencherSenha(ConfigProperties.PASSWORD);
-        loginPage.clicarLogin();
         searchSystemUsersPage.acessarMenuAdmin();
         searchSystemUsersPage.vaidarAcessoTelaAdmin();
     }
