@@ -140,4 +140,8 @@ Organizar features por funcionalidade
 Reutilizar métodos nas páginas
 Evitar duplicação de código
 Centralizar configurações
+<<<<<<< HEAD
 Atualizar locators quando necessário
+=======
+Atualizar locators quando necessário
+>>>>>>> 4e33c503b3f1a550527e30260500b0fbfa70680c
