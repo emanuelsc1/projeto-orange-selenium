@@ -31,9 +31,4 @@ public class ConfigProperties {
 
     }
 
-//    private ConfigProperties() {
-//        // evita instância
-//    }
-
-
 }

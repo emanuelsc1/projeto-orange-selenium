@@ -5,7 +5,6 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.WebDriver;
-import pages.LoginPage;
 import pages.SearchSystemUsersPage;
 import utils.ConfigProperties;
 
@@ -20,7 +19,6 @@ public class SearchSystemUsersSteps {
         this.driver = Hooks.getDriver();
         this.searchSystemUsersPage = new SearchSystemUsersPage(driver);
     }
-
     @Given("o usuário acessa o menu Admin")
     public void oUsuárioAcessaOMenuAdmin() {
         searchSystemUsersPage.acessarMenuAdmin();
