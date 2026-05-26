@@ -16,7 +16,10 @@ public class AddEmployeeSteps {
 
     public AddEmployeeSteps() {
         this.driver = Hooks.getDriver();
+        System.out.println("this.driver: "+this.driver);
+
         this.addEmployeePage = new AddEmployeePage(driver);
+        System.out.println("this.addEmployeePage: "+this.addEmployeePage);
     }
 
     @Given("que o usuário acessa o menu PIM")
@@ -50,6 +53,11 @@ public class AddEmployeeSteps {
 
         String nomeEsperado = addEmployeePage.getNomeRandom();
         String sobrenomeEsperado = addEmployeePage.getSobrenomeRandom();
+
+        System.out.println("nomeTela: "+nomeTela);
+        System.out.println("sobrenomeTela: "+sobrenomeTela);
+        System.out.println("nomeEsperado: "+nomeEsperado);
+        System.out.println("sobrenomeEsperado: "+sobrenomeEsperado);
 
         assertEquals(nomeEsperado, nomeTela);
         assertEquals(sobrenomeEsperado, sobrenomeTela);

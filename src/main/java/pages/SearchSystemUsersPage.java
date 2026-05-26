@@ -10,7 +10,7 @@ import java.time.Duration;
 public class SearchSystemUsersPage {
 
     public WebDriver driver;
-    private WebDriverWait wait;
+    public WebDriverWait wait;
 
     public SearchSystemUsersPage(WebDriver driver) {
         this.driver = driver;

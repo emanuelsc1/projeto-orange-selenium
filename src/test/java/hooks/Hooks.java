@@ -16,7 +16,7 @@ public class Hooks {
     private static final int TIMEOUT_SEGUNDOS = 10;
     private static WebDriverWait wait;
 
-    @Before
+    @Before(order = 1)
     public void inicializarDriver() {
         driver = new ChromeDriver();
         wait = new WebDriverWait(driver, Duration.ofSeconds(TIMEOUT_SEGUNDOS));
@@ -24,7 +24,7 @@ public class Hooks {
     }
 
 
-    @Before("@login")
+    @Before(value = "@login", order = 2)
     public void realizarLogin() {
         if (driver == null) {
             inicializarDriver();
@@ -35,6 +35,7 @@ public class Hooks {
         loginPage.preencherUsuario(ConfigProperties.USER);
         loginPage.preencherSenha(ConfigProperties.PASSWORD);
         loginPage.clicarLogin();
+        loginPage.aguardarDashboardCarregado();
     }
 
     @After

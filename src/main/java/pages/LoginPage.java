@@ -21,7 +21,12 @@ public class LoginPage {
     private final By username = By.name("username");
     private final By password = By.name("password");
     private final By loginButton = By.xpath("//button[@type='submit']");
-    private final By errorMessage = By.xpath("//div[contains(@class,'oxd-alert--error')]//p[contains(@class,'oxd-alert-content-text')]");
+    private final By errorMessage = By.xpath(
+            "//div[contains(@class,'oxd-alert--error')]" +
+                    "//p[contains(@class,'oxd-alert-content-text')]");
+    private final By dashboardTitle = By.xpath(
+            "//h6[normalize-space()='Dashboard']");
+
 
     public void acessarAplicacao() {
         driver.get(ConfigProperties.BASE_URL);
@@ -39,10 +44,16 @@ public class LoginPage {
         driver.findElement(loginButton).click();
     }
 
+    public void aguardarDashboardCarregado() {
+        wait.until(ExpectedConditions.urlContains("/dashboard"));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(dashboardTitle));
+    }
+
     public String obterMensagemErro() {
         return wait.until(
                 ExpectedConditions.visibilityOfElementLocated(errorMessage)
         ).getText();
 
     }
+
 }

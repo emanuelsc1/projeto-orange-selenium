@@ -19,6 +19,7 @@ public class SearchSystemUsersSteps {
         this.driver = Hooks.getDriver();
         this.searchSystemUsersPage = new SearchSystemUsersPage(driver);
     }
+
     @Given("o usuário acessa o menu Admin")
     public void oUsuárioAcessaOMenuAdmin() {
         searchSystemUsersPage.acessarMenuAdmin();
